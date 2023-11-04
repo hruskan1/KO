@@ -1,0 +1,999 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr"><head>
+        <title>BRUTE</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="language" content="en">
+        <meta name="description" content="Bundle for Reservation, Uploading, Testing and Evaluation">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="BRUTE_files/bootstrap.min.css" rel="stylesheet">
+        <link href="BRUTE_files/bootstrap-datetimepicker.css" rel="stylesheet">
+        <link href="BRUTE_files/bootstrap-switch.css" rel="stylesheet">
+        <link href="BRUTE_files/bootstrap-select.css" rel="stylesheet">
+        <link href="BRUTE_files/funkyradio.css" rel="stylesheet">
+        <!---
+                <link href="/brute/css/bootstrap.vertical-tabs.min.css" rel="stylesheet">
+                -->
+                <link href="BRUTE_files/fileinput.css" rel="stylesheet">
+        <link href="BRUTE_files/sou.css" rel="stylesheet">
+        <script type="text/javascript" src="BRUTE_files/jquery.min.js"></script>
+        <script type="text/javascript" src="BRUTE_files/moment-with-locales.min.js"></script>
+        <script type="text/javascript" src="BRUTE_files/bootstrap-switch.min.js"></script>
+        <script type="text/javascript" src="BRUTE_files/bootstrap-select.min.js"></script>
+        <script type="text/javascript" src="BRUTE_files/bootstrap-tabcollapse.js"></script>
+        <script type="text/javascript" src="BRUTE_files/bootstrap-datetimepicker.min.js"></script>
+        <script type="text/javascript" src="BRUTE_files/fileinput.min.js"></script>
+        <script type="text/javascript" src="BRUTE_files/bootstrap.min.js"></script>
+    </head>
+<body data-new-gr-c-s-check-loaded="8.908.0" data-gr-ext-installed="">
+    
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="border-width: 0 0 0">
+
+        <div class="container" style="position: fixed;left: 0">
+            <div class="navbar-header">
+                <a href="https://cw.felk.cvut.cz/brute/student/index.php"><img class="navbar-logo" src="BRUTE_files/logo.png"></a>
+                <a class="navbar-brand hidden-sm" href="https://cw.felk.cvut.cz/brute/student/index.php">BRUTE</a>
+
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#topmenu">
+                    <span class="sr-only">View navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="topmenu">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown "><a href="https://cw.felk.cvut.cz/brute/student/index.php" role="button">Index</a></li>
+<li class="dropdown "><a href="https://cw.felk.cvut.cz/brute/student/assignments.php" role="button">Assignments</a></li>
+<li class="dropdown "><a href="https://cw.felk.cvut.cz/brute/student/reservation.php" role="button">Reservation</a></li>
+<li class="dropdown "><a href="https://cw.felk.cvut.cz/brute/student/bbb.php" role="button">Conference rooms</a></li>
+<li class="dropdown "><a href="https://cw.fel.cvut.cz/" role="button">CW Wiki</a></li>
+<li class="dropdown "><a href="https://cw.felk.cvut.cz/forum" role="button">Forum</a></li>
+<li class="dropdown "><a href="https://cw.felk.cvut.cz/brute/student/contact.php" role="button">Contact</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right" style="position: fixed;right: 5px">
+                                            <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span>
+                                <span class="hidden-sm">
+                                Hruška, Antonín                                </span>
+                                <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                                     <li><a href="https://cw.felk.cvut.cz/brute/student/?logout=1"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                            </ul>
+                        </li>
+                                        </ul>
+            </div>
+        </div>
+    </nav>
+    
+    
+        <div class="container-large">
+            <div class="row" style="margin-left: 1px">
+                <div class="col-xs-12 col-md-9">
+                    <header>
+                        <h1>KO - Combinatorial Optimization: B4M35KO+BE4M35KO</h1>
+                    </header>
+                    <div>
+                        Teachers: <span style="font-weight:bold; padding: 3px">Hanzálek, Zdeněk <a href="mailto:hanzalek@fel.cvut.cz"><img src="BRUTE_files/exmail.gif"></a></span> | <span style="font-weight:bold; padding: 3px">Novák, Antonín <a href="mailto:antonin.novak@cvut.cz"><img src="BRUTE_files/exmail.gif"></a></span> | <span style="font-weight:bold; padding: 3px">Vlk, Marek <a href="mailto:marek.vlk@cvut.cz"><img src="BRUTE_files/exmail.gif"></a></span> | <span style="font-weight:bold; padding: 3px">Benedikt, Ondřej <a href="mailto:benedond@fel.cvut.cz"><img src="BRUTE_files/exmail.gif"></a></span> | <span style="font-weight:bold; padding: 3px">Heinz, Vilém <a href="mailto:heinzvil@fel.cvut.cz"><img src="BRUTE_files/exmail.gif"></a></span>                    </div>
+                    <div style="margin-top: 10px;">
+                        
+
+                        <h3>Assignments</h3>
+                        <div class="col-xs-12 col-sm-2">
+                            <ul id="assignment_tabs" class="nav nav-tabs nav-pills tabs-left hidden-xs" role="tablist">
+                                <li role="presentation" class="" style="width:100%"><a href="#6518" data-toggle="tab" data-id="6518" data-course_id="1192" title="HW1 - Call center scheduling" aria-expanded="false">HW1</a></li>
+<li role="presentation" style="width:100%" class=""><a href="#6519" data-toggle="tab" data-id="6519" data-course_id="1192" title="HW2 - Survey Design" aria-expanded="false">HW2</a></li>
+<li role="presentation" style="width:100%" class=""><a href="#6520" data-toggle="tab" data-id="6520" data-course_id="1192" title="HW3 - Object Tracking" aria-expanded="false">HW3</a></li>
+<li role="presentation" style="width:100%" class=""><a href="#6521" data-toggle="tab" data-id="6521" data-course_id="1192" title="HW4 - TSP" aria-expanded="false">HW4</a></li>
+<li role="presentation" style="width:100%" class=""><a href="#6522" data-toggle="tab" data-id="6522" data-course_id="1192" title="HW5 - Bratley's algorithm" aria-expanded="false">HW5</a></li>
+<li role="presentation" style="width:100%" class=""><a href="#7064" data-toggle="tab" data-id="7064" data-course_id="1192" title="PR_TEST - Practical test" aria-expanded="false">PR_TEST</a></li>
+<li role="presentation" style="width:100%" class=""><a href="#6527" data-toggle="tab" data-id="6527" data-course_id="1192" title="SP-CC-O - CoContest: Optimal" aria-expanded="false">SP-CC-O</a></li>
+<li role="presentation" style="width:100%" class=""><a href="#6528" data-toggle="tab" data-id="6528" data-course_id="1192" title="SP-CC-R - CoContest: Ranking" aria-expanded="false">SP-CC-R</a></li>
+<li role="presentation" style="width:100%" class=""><a href="#6529" data-toggle="tab" data-id="6529" data-course_id="1192" title="SP-CC-T - CoContest: Threshold" aria-expanded="false">SP-CC-T</a></li>
+<li role="presentation" style="width:100%" class=""><a href="#7099" data-toggle="tab" data-id="7099" data-course_id="1192" title="SP-RP - Research project" aria-expanded="false">SP-RP</a></li>
+<li role="presentation" style="width:100%" class=""><a href="#6972" data-toggle="tab" data-id="6972" data-course_id="1192" title="TH_TEST1 - Theoretical test 1" aria-expanded="false">TH_TEST1</a></li>
+<li role="presentation" style="width:100%" class="active"><a href="#7042" data-toggle="tab" data-id="7042" data-course_id="1192" title="TH_TEST2 - Theoretical test 2" aria-expanded="true">TH_TEST2</a></li>
+
+                            </ul><div class="panel-group visible-xs" id="assignment_tabs-accordion"></div>
+                        </div>
+                        <div class="col-xs-12 col-sm-10">
+                            <div class="panel-group visible-xs col-xs-12" id="myTab-accordion"></div>
+                            <div id="assignment_tabsContent" class="tab-content  hidden-xs">
+                                <div id="6518" class="tab-pane">
+<form name="form_assignment_6518" class="form-horizontal" role="form" action="/brute/student/course.php" method="POST">
+<div class="form-group form-group-sm">
+ <label class="control-label col-sm-3">Assignment</label>
+<div class="col-sm-9" style="padding-top: 3px;">
+<a href="https://cw.fel.cvut.cz/wiki/_media/courses/ko/03_ilp.pdf" target="NEW" title="Assignment instruction">HW1 - Call center scheduling</a>
+</div></div>
+<div class="form-group form-group-sm">
+ <label class="control-label col-sm-3">Mandatory</label>
+<div class="col-sm-9" style="padding-top: 3px;">
+This assignment has to be uploaded or evaluated. Required minimum score is 2.
+</div></div>
+<div class="form-group form-group-sm">
+ <label class="control-label col-sm-3">Deadline</label>
+<div class="col-sm-9" style="padding-top: 3px;">
+14.3.2021 23:59 - deadline expired
+</div></div>
+<div class="form-group form-group-sm">
+ <label class="control-label col-sm-3">Penalty</label>
+<div class="col-sm-9" style="padding-top: 3px;">
+Every 168 hours will cost you 1 points down. But no more than 2 points.
+</div></div>
+<div class="form-group form-group-sm">
+ <label class="control-label col-sm-3">Latest upload</label>
+<div class="col-sm-9" style="padding-top: 3px;">
+<a href="https://cw.felk.cvut.cz/brute/student/view_upload/1062039" target="VIEW">Uploaded at 8.3.2021 23:56</a>
+<a class="btn btn-info" href="https://cw.felk.cvut.cz/brute/student/view_upload/1062039" title="View upload" target="VIEW"><span class="glyphicon glyphicon-search"></span></a>
+<a class="btn btn-info" href="https://cw.felk.cvut.cz/brute/student/download_upload/1062039" title="Download upload" target="VIEW"><span class="glyphicon glyphicon-save"></span></a>
+
+</div></div>
+<div class="form-group form-group-sm">
+ <label class="control-label col-sm-3">Blocked upload</label>
+<div class="col-sm-9" style="padding-top: 3px;">
+Upload is blocked now. Contact your teacher to unblock.
+</div></div>
+<div class="form-group form-group-sm">
+ <label class="control-label col-sm-3">Score</label>
+<div class="col-sm-9" style="padding-top: 3px;">
+<span style="font-weight: bold;">2</span> (  + AE: 2 ) (  min: 2 max: 2 )
+</div></div>
+<div class="form-group form-group-sm">
+ <label class="control-label col-sm-3">Number of uploads</label>
+<div class="col-sm-9" style="padding-top: 3px;">
+8
+<span class="help-inline">Note: Only 100 uploads are allowed</span>
+</div></div>
+<div class="form-group form-group-sm">
+ <label class="control-label col-sm-3">Results</label>
+<div class="col-sm-9" style="padding-top: 3px;">
+<a href="https://cw.felk.cvut.cz/brute/data/ae/release/2021l_ko/hw/eslib-repo/eslib/results_scripts/normal.php?&amp;idg=hruskan1&amp;idu=6518&amp;upload=1062039&amp;result=689406" target="VIEW">AE result</a>
+
+</div></div>
+<input type="HIDDEN" id="id" name="id" value="1192">
+<input type="HIDDEN" id="assignment_id" name="assignment_id" value="6518">
+</form>
+</div>
+<div id="6519" class="tab-pane">
+<form name="form_assignment_6519" class="form-horizontal" role="form" action="/brute/student/course.php" method="POST">
+<div class="form-group form-group-sm">
+ <label class="control-label col-sm-3">Assignment</label>
+<div class="col-sm-9" style="padding-top: 3px;">
+<a href="https://cw.fel.cvut.cz/wiki/_media/courses/ko/hw2-assignment.pdf" target="NEW" title="Assignment instruction">HW2 - Survey Design</a>
+</div></div>
+<div class="form-group form-group-sm">
+ <label class="control-label col-sm-3">Mandatory</label>
+<div class="col-sm-9" style="padding-top: 3px;">
+This assignment has to be uploaded or evaluated. Required minimum score is 2.
+</div></div>
+<div class="form-group form-group-sm">
+ <label class="control-label col-sm-3">Deadline</label>
+<div class="col-sm-9" style="padding-top: 3px;">
+19.4.2021 23:59 - deadline expired
+</div></div>
+<div class="form-group form-group-sm">
+ <label class="control-label col-sm-3">Penalty</label>
+<div class="col-sm-9" style="padding-top: 3px;">
+Every 168 hours will cost you 1 points down. But no more than 2 points.
+</div></div>
+<div class="form-group form-group-sm">
+ <label class="control-label col-sm-3">Latest upload</label>
+<div class="col-sm-9" style="padding-top: 3px;">
+<a href="https://cw.felk.cvut.cz/brute/student/view_upload/1093469" target="VIEW">Uploaded at 17.4.2021 23:53</a>
+<a class="btn btn-info" href="https://cw.felk.cvut.cz/brute/student/view_upload/1093469" title="View upload" target="VIEW"><span class="glyphicon glyphicon-search"></span></a>
+<a class="btn btn-info" href="https://cw.felk.cvut.cz/brute/student/download_upload/1093469" title="Download upload" target="VIEW"><span class="glyphicon glyphicon-save"></span></a>
+
+</div></div>
+<div class="form-group form-group-sm">
+ <label class="control-label col-sm-3">Blocked upload</label>
+<div class="col-sm-9" style="padding-top: 3px;">
+Upload is blocked now. Contact your teacher to unblock.
+</div></div>
+<div class="form-group form-group-sm">
+ <label class="control-label col-sm-3">Score</label>
+<div class="col-sm-9" style="padding-top: 3px;">
+<span style="font-weight: bold;">2</span> (  + AE: 2 ) (  min: 2 max: 2 )
+</div></div>
+<div class="form-group form-group-sm">
+ <label class="control-label col-sm-3">Number of uploads</label>
+<div class="col-sm-9" style="padding-top: 3px;">
+1
+<span class="help-inline">Note: Only 100 uploads are allowed</span>
+</div></div>
+<div class="form-group form-group-sm">
+ <label class="control-label col-sm-3">Results</label>
+<div class="col-sm-9" style="padding-top: 3px;">
+<a href="https://cw.felk.cvut.cz/brute/data/ae/release/2021l_ko/hw/eslib-repo/eslib/results_scripts/normal.php?&amp;idg=hruskan1&amp;idu=6519&amp;upload=1093469&amp;result=714756" target="VIEW">AE result</a>
+
+</div></div>
+<input type="HIDDEN" id="id" name="id" value="1192">
+<input type="HIDDEN" id="assignment_id" name="assignment_id" value="6519">
+</form>
+</div>
+<div id="6520" class="tab-pane">
+<form name="form_assignment_6520" class="form-horizontal" role="form" action="/brute/student/course.php" method="POST">
+<div class="form-group form-group-sm">
+ <label class="control-label col-sm-3">Assignment</label>
+<div class="col-sm-9" style="padding-top: 3px;">
+<a href="https://cw.fel.cvut.cz/wiki/_media/courses/ko/09_mcf.pdf" target="NEW" title="Assignment instruction">HW3 - Object Tracking</a>
+</div></div>
+<div class="form-group form-group-sm">
+ <label class="control-label col-sm-3">Mandatory</label>
+<div class="col-sm-9" style="padding-top: 3px;">
+This assignment has to be uploaded or evaluated. Required minimum score is 2.
+</div></div>
+<div class="form-group form-group-sm">
+ <label class="control-label col-sm-3">Deadline</label>
+<div class="col-sm-9" style="padding-top: 3px;">
+2.5.2021 23:59 - deadline expired
+</div></div>
+<div class="form-group form-group-sm">
+ <label class="control-label col-sm-3">Penalty</label>
+<div class="col-sm-9" style="padding-top: 3px;">
+Every 168 hours will cost you 1 points down. But no more than 2 points.
+</div></div>
+<div class="form-group form-group-sm">
+ <label class="control-label col-sm-3">Latest upload</label>
+<div class="col-sm-9" style="padding-top: 3px;">
+<a href="https://cw.felk.cvut.cz/brute/student/view_upload/1100554" target="VIEW">Uploaded at 28.4.2021 10:41</a>
+<a class="btn btn-info" href="https://cw.felk.cvut.cz/brute/student/view_upload/1100554" title="View upload" target="VIEW"><span class="glyphicon glyphicon-search"></span></a>
+<a class="btn btn-info" href="https://cw.felk.cvut.cz/brute/student/download_upload/1100554" title="Download upload" target="VIEW"><span class="glyphicon glyphicon-save"></span></a>
+
+</div></div>
+<div class="form-group form-group-sm">
+ <label class="control-label col-sm-3">Blocked upload</label>
+<div class="col-sm-9" style="padding-top: 3px;">
+Upload is blocked now. Contact your teacher to unblock.
+</div></div>
+<div class="form-group form-group-sm">
+ <label class="control-label col-sm-3">Score</label>
+<div class="col-sm-9" style="padding-top: 3px;">
+<span style="font-weight: bold;">2</span> (  + AE: 2 ) (  min: 2 max: 2 )
+</div></div>
+<div class="form-group form-group-sm">
+ <label class="control-label col-sm-3">Number of uploads</label>
+<div class="col-sm-9" style="padding-top: 3px;">
+1
+<span class="help-inline">Note: Only 100 uploads are allowed</span>
+</div></div>
+<div class="form-group form-group-sm">
+ <label class="control-label col-sm-3">Results</label>
+<div class="col-sm-9" style="padding-top: 3px;">
+<a href="https://cw.felk.cvut.cz/brute/data/ae/release/2021l_ko/hw/eslib-repo/eslib/results_scripts/normal.php?&amp;idg=hruskan1&amp;idu=6520&amp;upload=1100554&amp;result=720300" target="VIEW">AE result</a>
+
+</div></div>
+<input type="HIDDEN" id="id" name="id" value="1192">
+<input type="HIDDEN" id="assignment_id" name="assignment_id" value="6520">
+</form>
+</div>
+<div id="6521" class="tab-pane">
+<form name="form_assignment_6521" class="form-horizontal" role="form" action="/brute/student/course.php" method="POST">
+<div class="form-group form-group-sm">
+ <label class="control-label col-sm-3">Assignment</label>
+<div class="col-sm-9" style="padding-top: 3px;">
+<a href="https://cw.fel.cvut.cz/wiki/_media/courses/ko/10_tsp.pdf" target="NEW" title="Assignment instruction">HW4 - TSP</a>
+</div></div>
+<div class="form-group form-group-sm">
+ <label class="control-label col-sm-3">Mandatory</label>
+<div class="col-sm-9" style="padding-top: 3px;">
+This assignment has to be uploaded or evaluated. Required minimum score is 2.
+</div></div>
+<div class="form-group form-group-sm">
+ <label class="control-label col-sm-3">Deadline</label>
+<div class="col-sm-9" style="padding-top: 3px;">
+9.5.2021 23:59 - deadline expired
+</div></div>
+<div class="form-group form-group-sm">
+ <label class="control-label col-sm-3">Penalty</label>
+<div class="col-sm-9" style="padding-top: 3px;">
+Every 168 hours will cost you 1 points down. But no more than 2 points.
+</div></div>
+<div class="form-group form-group-sm">
+ <label class="control-label col-sm-3">Latest upload</label>
+<div class="col-sm-9" style="padding-top: 3px;">
+<a href="https://cw.felk.cvut.cz/brute/student/view_upload/1107169" target="VIEW">Uploaded at 6.5.2021 19:08</a>
+<a class="btn btn-info" href="https://cw.felk.cvut.cz/brute/student/view_upload/1107169" title="View upload" target="VIEW"><span class="glyphicon glyphicon-search"></span></a>
+<a class="btn btn-info" href="https://cw.felk.cvut.cz/brute/student/download_upload/1107169" title="Download upload" target="VIEW"><span class="glyphicon glyphicon-save"></span></a>
+
+</div></div>
+<div class="form-group form-group-sm">
+ <label class="control-label col-sm-3">Blocked upload</label>
+<div class="col-sm-9" style="padding-top: 3px;">
+Upload is blocked now. Contact your teacher to unblock.
+</div></div>
+<div class="form-group form-group-sm">
+ <label class="control-label col-sm-3">Score</label>
+<div class="col-sm-9" style="padding-top: 3px;">
+<span style="font-weight: bold;">2</span> (  + AE: 2 ) (  min: 2 max: 2 )
+</div></div>
+<div class="form-group form-group-sm">
+ <label class="control-label col-sm-3">Number of uploads</label>
+<div class="col-sm-9" style="padding-top: 3px;">
+2
+<span class="help-inline">Note: Only 100 uploads are allowed</span>
+</div></div>
+<div class="form-group form-group-sm">
+ <label class="control-label col-sm-3">Results</label>
+<div class="col-sm-9" style="padding-top: 3px;">
+<a href="https://cw.felk.cvut.cz/brute/data/ae/release/2021l_ko/hw/eslib-repo/eslib/results_scripts/normal.php?&amp;idg=hruskan1&amp;idu=6521&amp;upload=1107169&amp;result=725748" target="VIEW">AE result</a>
+
+</div></div>
+<input type="HIDDEN" id="id" name="id" value="1192">
+<input type="HIDDEN" id="assignment_id" name="assignment_id" value="6521">
+</form>
+</div>
+<div id="6522" class="tab-pane">
+<form name="form_assignment_6522" class="form-horizontal" role="form" action="/brute/student/course.php" method="POST">
+<div class="form-group form-group-sm">
+ <label class="control-label col-sm-3">Assignment</label>
+<div class="col-sm-9" style="padding-top: 3px;">
+<a href="https://cw.fel.cvut.cz/wiki/_media/courses/ko/11_bratley_handout.pdf" target="NEW" title="Assignment instruction">HW5 - Bratley's algorithm</a>
+</div></div>
+<div class="form-group form-group-sm">
+ <label class="control-label col-sm-3">Mandatory</label>
+<div class="col-sm-9" style="padding-top: 3px;">
+This assignment has to be uploaded or evaluated. Required minimum score is 2.
+</div></div>
+<div class="form-group form-group-sm">
+ <label class="control-label col-sm-3">Deadline</label>
+<div class="col-sm-9" style="padding-top: 3px;">
+23.5.2021 23:59 - deadline expired
+</div></div>
+<div class="form-group form-group-sm">
+ <label class="control-label col-sm-3">Latest upload</label>
+<div class="col-sm-9" style="padding-top: 3px;">
+<a href="https://cw.felk.cvut.cz/brute/student/view_upload/1114654" target="VIEW">Uploaded at 18.5.2021 03:17</a>
+<a class="btn btn-info" href="https://cw.felk.cvut.cz/brute/student/view_upload/1114654" title="View upload" target="VIEW"><span class="glyphicon glyphicon-search"></span></a>
+<a class="btn btn-info" href="https://cw.felk.cvut.cz/brute/student/download_upload/1114654" title="Download upload" target="VIEW"><span class="glyphicon glyphicon-save"></span></a>
+
+</div></div>
+<div class="form-group form-group-sm">
+ <label class="control-label col-sm-3">Blocked upload</label>
+<div class="col-sm-9" style="padding-top: 3px;">
+Upload is blocked now. Contact your teacher to unblock.
+</div></div>
+<div class="form-group form-group-sm">
+ <label class="control-label col-sm-3">Score</label>
+<div class="col-sm-9" style="padding-top: 3px;">
+<span style="font-weight: bold;">2</span> (  + AE: 2 ) (  min: 2 max: 2 )
+</div></div>
+<div class="form-group form-group-sm">
+ <label class="control-label col-sm-3">Number of uploads</label>
+<div class="col-sm-9" style="padding-top: 3px;">
+7
+<span class="help-inline">Note: Only 100 uploads are allowed</span>
+</div></div>
+<div class="form-group form-group-sm">
+ <label class="control-label col-sm-3">Results</label>
+<div class="col-sm-9" style="padding-top: 3px;">
+<a href="https://cw.felk.cvut.cz/brute/data/ae/release/2021l_ko/hw/eslib-repo/eslib/results_scripts/normal.php?&amp;idg=hruskan1&amp;idu=6522&amp;upload=1114654&amp;result=732161" target="VIEW">AE result</a>
+
+</div></div>
+<input type="HIDDEN" id="id" name="id" value="1192">
+<input type="HIDDEN" id="assignment_id" name="assignment_id" value="6522">
+</form>
+</div>
+<div id="7064" class="tab-pane">
+<form name="form_assignment_7064" class="form-horizontal" role="form" action="/brute/student/course.php" method="POST">
+<div class="form-group form-group-sm">
+ <label class="control-label col-sm-3">Assignment</label>
+<div class="col-sm-9" style="padding-top: 3px;">
+<a href="http://rtime.felk.cvut.cz/~novakan9/ko/klobasa/KO_prac_test_2021.pdf" target="NEW" title="Assignment instruction">PR_TEST - Practical test</a>
+</div></div>
+<div class="form-group form-group-sm">
+ <label class="control-label col-sm-3">Deadline</label>
+<div class="col-sm-9" style="padding-top: 3px;">
+20.4.2021 13:40 - deadline expired
+</div></div>
+<div class="form-group form-group-sm">
+ <label class="control-label col-sm-3">Latest upload</label>
+<div class="col-sm-9" style="padding-top: 3px;">
+<a href="https://cw.felk.cvut.cz/brute/student/view_upload/1095737" target="VIEW">Uploaded at 20.4.2021 13:30</a>
+<a class="btn btn-info" href="https://cw.felk.cvut.cz/brute/student/view_upload/1095737" title="View upload" target="VIEW"><span class="glyphicon glyphicon-search"></span></a>
+<a class="btn btn-info" href="https://cw.felk.cvut.cz/brute/student/download_upload/1095737" title="Download upload" target="VIEW"><span class="glyphicon glyphicon-save"></span></a>
+
+</div></div>
+<div class="form-group form-group-sm">
+ <label class="control-label col-sm-3">Blocked upload</label>
+<div class="col-sm-9" style="padding-top: 3px;">
+Upload is blocked now. Contact your teacher to unblock.
+</div></div>
+<div class="form-group form-group-sm">
+ <label class="control-label col-sm-3">Score</label>
+<div class="col-sm-9" style="padding-top: 3px;">
+<span style="font-weight: bold;">10</span> (  + AE: 10 ) (  min: 0 max: 10 )
+</div></div>
+<div class="form-group form-group-sm">
+ <label class="control-label col-sm-3">Number of uploads</label>
+<div class="col-sm-9" style="padding-top: 3px;">
+4
+<span class="help-inline">Note: Only 100 uploads are allowed</span>
+</div></div>
+<div class="form-group form-group-sm">
+ <label class="control-label col-sm-3">Results</label>
+<div class="col-sm-9" style="padding-top: 3px;">
+<a href="https://cw.felk.cvut.cz/brute/data/ae/release/2021l_ko/tests/eslib-repo/eslib/results_scripts/normal.php?&amp;idg=hruskan1&amp;idu=7064&amp;upload=1095737&amp;result=716579" target="VIEW">AE result</a>
+
+</div></div>
+<input type="HIDDEN" id="id" name="id" value="1192">
+<input type="HIDDEN" id="assignment_id" name="assignment_id" value="7064">
+</form>
+</div>
+<div id="6527" class="tab-pane">
+<form name="form_assignment_6527" class="form-horizontal" role="form" action="/brute/student/course.php" method="POST">
+<div class="form-group form-group-sm">
+ <label class="control-label col-sm-3">Assignment</label>
+<div class="col-sm-9" style="padding-top: 3px;">
+<a href="https://cw.fel.cvut.cz/wiki/_media/courses/ko/cocontest_2021.pdf" target="NEW" title="Assignment instruction">SP-CC-O - CoContest: Optimal</a>
+</div></div>
+<div class="form-group form-group-sm">
+ <label class="control-label col-sm-3">Deadline</label>
+<div class="col-sm-9" style="padding-top: 3px;">
+28.3.2021 23:59 - deadline expired
+</div></div>
+<div class="form-group form-group-sm">
+ <label class="control-label col-sm-3">Penalty</label>
+<div class="col-sm-9" style="padding-top: 3px;">
+Every 168 hours will cost you 1 points down. But no more than 1 points.
+</div></div>
+<div class="form-group form-group-sm">
+ <label class="control-label col-sm-3">Latest upload</label>
+<div class="col-sm-9" style="padding-top: 3px;">
+<a href="https://cw.felk.cvut.cz/brute/student/view_upload/1079095" target="VIEW">Uploaded at 28.3.2021 17:43</a>
+<a class="btn btn-info" href="https://cw.felk.cvut.cz/brute/student/view_upload/1079095" title="View upload" target="VIEW"><span class="glyphicon glyphicon-search"></span></a>
+<a class="btn btn-info" href="https://cw.felk.cvut.cz/brute/student/download_upload/1079095" title="Download upload" target="VIEW"><span class="glyphicon glyphicon-save"></span></a>
+
+</div></div>
+<div class="form-group form-group-sm">
+ <label class="control-label col-sm-3">Blocked upload</label>
+<div class="col-sm-9" style="padding-top: 3px;">
+Upload is blocked now. Contact your teacher to unblock.
+</div></div>
+<div class="form-group form-group-sm">
+ <label class="control-label col-sm-3">Score</label>
+<div class="col-sm-9" style="padding-top: 3px;">
+<span style="font-weight: bold;">3</span> (  + AE: 3 ) (  min: 0 max: 3 )
+</div></div>
+<div class="form-group form-group-sm">
+ <label class="control-label col-sm-3">Number of uploads</label>
+<div class="col-sm-9" style="padding-top: 3px;">
+1
+<span class="help-inline">Note: Only 100 uploads are allowed</span>
+</div></div>
+<div class="form-group form-group-sm">
+ <label class="control-label col-sm-3">Results</label>
+<div class="col-sm-9" style="padding-top: 3px;">
+<a href="https://cw.felk.cvut.cz/brute/data/ae/release/2021l_ko/contest/eslib-repo/eslib/results_scripts/normal.php?&amp;idg=hruskan1&amp;idu=6527&amp;upload=1079095&amp;result=703416" target="VIEW">AE result</a>
+
+</div></div>
+<input type="HIDDEN" id="id" name="id" value="1192">
+<input type="HIDDEN" id="assignment_id" name="assignment_id" value="6527">
+</form>
+</div>
+<div id="6528" class="tab-pane">
+<form name="form_assignment_6528" class="form-horizontal" role="form" action="/brute/student/course.php" method="POST">
+<div class="form-group form-group-sm">
+ <label class="control-label col-sm-3">Assignment</label>
+<div class="col-sm-9" style="padding-top: 3px;">
+<a href="https://cw.fel.cvut.cz/wiki/_media/courses/ko/cocontest_2021.pdf" target="NEW" title="Assignment instruction">SP-CC-R - CoContest: Ranking</a>
+</div></div>
+<div class="form-group form-group-sm">
+ <label class="control-label col-sm-3">Deadline</label>
+<div class="col-sm-9" style="padding-top: 3px;">
+16.5.2021 23:59 - deadline expired
+</div></div>
+<div class="form-group form-group-sm">
+ <label class="control-label col-sm-3">Latest upload</label>
+<div class="col-sm-9" style="padding-top: 3px;">
+<a href="https://cw.felk.cvut.cz/brute/student/view_upload/1112974" target="VIEW">Uploaded at 16.5.2021 09:35</a>
+<a class="btn btn-info" href="https://cw.felk.cvut.cz/brute/student/view_upload/1112974" title="View upload" target="VIEW"><span class="glyphicon glyphicon-search"></span></a>
+<a class="btn btn-info" href="https://cw.felk.cvut.cz/brute/student/download_upload/1112974" title="Download upload" target="VIEW"><span class="glyphicon glyphicon-save"></span></a>
+
+</div></div>
+<div class="form-group form-group-sm">
+ <label class="control-label col-sm-3">Blocked upload</label>
+<div class="col-sm-9" style="padding-top: 3px;">
+Upload is blocked now. Contact your teacher to unblock.
+</div></div>
+<div class="form-group form-group-sm">
+ <label class="control-label col-sm-3">Score</label>
+<div class="col-sm-9" style="padding-top: 3px;">
+<span style="font-weight: bold;">5</span> ( manual: 5 + AE: 0 ) (  min: 0 max: 5 )
+</div></div>
+<div class="form-group form-group-sm">
+ <label class="control-label col-sm-3">Number of uploads</label>
+<div class="col-sm-9" style="padding-top: 3px;">
+2
+<span class="help-inline">Note: Only 100 uploads are allowed</span>
+</div></div>
+<div class="form-group form-group-sm">
+ <label class="control-label col-sm-3">Results</label>
+<div class="col-sm-9" style="padding-top: 3px;">
+<a href="https://cw.felk.cvut.cz/brute/data/ae/release/2021l_ko/contest/eslib-repo/eslib/results_scripts/contest.php?&amp;idg=hruskan1&amp;idu=6528&amp;upload=1112974&amp;result=730952" target="VIEW">AE result</a>
+
+</div></div>
+<input type="HIDDEN" id="id" name="id" value="1192">
+<input type="HIDDEN" id="assignment_id" name="assignment_id" value="6528">
+</form>
+</div>
+<div id="6529" class="tab-pane">
+<form name="form_assignment_6529" class="form-horizontal" role="form" action="/brute/student/course.php" method="POST">
+<div class="form-group form-group-sm">
+ <label class="control-label col-sm-3">Assignment</label>
+<div class="col-sm-9" style="padding-top: 3px;">
+<a href="https://cw.fel.cvut.cz/wiki/_media/courses/ko/cocontest_2021.pdf" target="NEW" title="Assignment instruction">SP-CC-T - CoContest: Threshold</a>
+</div></div>
+<div class="form-group form-group-sm">
+ <label class="control-label col-sm-3">Deadline</label>
+<div class="col-sm-9" style="padding-top: 3px;">
+16.5.2021 23:59 - deadline expired
+</div></div>
+<div class="form-group form-group-sm">
+ <label class="control-label col-sm-3">Penalty</label>
+<div class="col-sm-9" style="padding-top: 3px;">
+Every 168 hours will cost you 1 points down. But no more than 1 points.
+</div></div>
+<div class="form-group form-group-sm">
+ <label class="control-label col-sm-3">Latest upload</label>
+<div class="col-sm-9" style="padding-top: 3px;">
+<a href="https://cw.felk.cvut.cz/brute/student/view_upload/1110441" target="VIEW">Uploaded at 12.5.2021 11:42</a>
+<a class="btn btn-info" href="https://cw.felk.cvut.cz/brute/student/view_upload/1110441" title="View upload" target="VIEW"><span class="glyphicon glyphicon-search"></span></a>
+<a class="btn btn-info" href="https://cw.felk.cvut.cz/brute/student/download_upload/1110441" title="Download upload" target="VIEW"><span class="glyphicon glyphicon-save"></span></a>
+
+</div></div>
+<div class="form-group form-group-sm">
+ <label class="control-label col-sm-3">Blocked upload</label>
+<div class="col-sm-9" style="padding-top: 3px;">
+Upload is blocked now. Contact your teacher to unblock.
+</div></div>
+<div class="form-group form-group-sm">
+ <label class="control-label col-sm-3">Score</label>
+<div class="col-sm-9" style="padding-top: 3px;">
+<span style="font-weight: bold;">8</span> (  + AE: 8 ) (  min: 0 max: 8 )
+</div></div>
+<div class="form-group form-group-sm">
+ <label class="control-label col-sm-3">Number of uploads</label>
+<div class="col-sm-9" style="padding-top: 3px;">
+16
+<span class="help-inline">Note: Only 100 uploads are allowed</span>
+</div></div>
+<div class="form-group form-group-sm">
+ <label class="control-label col-sm-3">Results</label>
+<div class="col-sm-9" style="padding-top: 3px;">
+<a href="https://cw.felk.cvut.cz/brute/data/ae/release/2021l_ko/contest/eslib-repo/eslib/results_scripts/normal.php?&amp;idg=hruskan1&amp;idu=6529&amp;upload=1110441&amp;result=728653" target="VIEW">AE result</a>
+
+</div></div>
+<input type="HIDDEN" id="id" name="id" value="1192">
+<input type="HIDDEN" id="assignment_id" name="assignment_id" value="6529">
+</form>
+</div>
+<div id="7099" class="tab-pane">
+<form name="form_assignment_7099" class="form-horizontal" role="form" action="/brute/student/course.php" method="POST">
+<div class="form-group form-group-sm">
+ <label class="control-label col-sm-3">Assignment</label>
+<div class="col-sm-9" style="padding-top: 3px;">
+SP-RP - Research project
+</div></div>
+<div class="form-group form-group-sm">
+ <label class="control-label col-sm-3">Deadline</label>
+<div class="col-sm-9" style="padding-top: 3px;">
+23.5.2021 22:59 - deadline expired
+</div></div>
+<div class="form-group form-group-sm">
+ <label class="control-label col-sm-3">Blocked upload</label>
+<div class="col-sm-9" style="padding-top: 3px;">
+Upload is blocked now. Contact your teacher to unblock.
+</div></div>
+<div class="form-group form-group-sm">
+ <label class="control-label col-sm-3">Score</label>
+<div class="col-sm-9" style="padding-top: 3px;">
+Not yet evaluated.
+</div></div>
+<input type="HIDDEN" id="id" name="id" value="1192">
+<input type="HIDDEN" id="assignment_id" name="assignment_id" value="7099">
+</form>
+</div>
+<div id="6972" class="tab-pane">
+<form name="form_assignment_6972" class="form-horizontal" role="form" action="/brute/student/course.php" method="POST">
+<div class="form-group form-group-sm">
+ <label class="control-label col-sm-3">Assignment</label>
+<div class="col-sm-9" style="padding-top: 3px;">
+<a href="http://rtime.felk.cvut.cz/~novakan9/ko/klobasa/TH_TEST1/test_2.pdf" target="NEW" title="Assignment instruction">TH_TEST1 - Theoretical test 1</a>
+</div></div>
+<div class="form-group form-group-sm">
+ <label class="control-label col-sm-3">Deadline</label>
+<div class="col-sm-9" style="padding-top: 3px;">
+16.3.2021 12:55 - deadline expired
+</div></div>
+<div class="form-group form-group-sm">
+ <label class="control-label col-sm-3">Blocked upload</label>
+<div class="col-sm-9" style="padding-top: 3px;">
+Upload is blocked now. Contact your teacher to unblock.
+</div></div>
+<div class="form-group form-group-sm">
+ <label class="control-label col-sm-3">Score</label>
+<div class="col-sm-9" style="padding-top: 3px;">
+<span style="font-weight: bold;">0</span>  (  min: 0 max: 7 )
+</div></div>
+<div class="form-group form-group-sm">
+ <label class="control-label col-sm-3">Reviewed by</label>
+<div class="col-sm-9" style="padding-top: 3px;">
+<span>Benedikt, Ondřej <a href="mailto:benedond@fel.cvut.cz"><img src="BRUTE_files/exmail.gif"></a></span>
+</div></div>
+<input type="HIDDEN" id="id" name="id" value="1192">
+<input type="HIDDEN" id="assignment_id" name="assignment_id" value="6972">
+</form>
+</div>
+<div id="7042" class="tab-pane active">
+<form name="form_assignment_7042" class="form-horizontal" role="form" action="/brute/student/course.php" method="POST">
+<div class="form-group form-group-sm">
+ <label class="control-label col-sm-3">Assignment</label>
+<div class="col-sm-9" style="padding-top: 3px;">
+TH_TEST2 - Theoretical test 2
+</div></div>
+<div class="form-group form-group-sm">
+ <label class="control-label col-sm-3">Deadline</label>
+<div class="col-sm-9" style="padding-top: 3px;">
+13.4.2021 13:50 - deadline expired
+</div></div>
+<div class="form-group form-group-sm">
+ <label class="control-label col-sm-3">Blocked upload</label>
+<div class="col-sm-9" style="padding-top: 3px;">
+Upload is blocked now. Contact your teacher to unblock.
+</div></div>
+<div class="form-group form-group-sm">
+ <label class="control-label col-sm-3">Score</label>
+<div class="col-sm-9" style="padding-top: 3px;">
+<span style="font-weight: bold;">7</span>  (  min: -3.5 max: 7 )
+</div></div>
+<div class="form-group form-group-sm">
+ <label class="control-label col-sm-3">Results</label>
+<div class="col-sm-9" style="padding-top: 3px;">
+<b>Score: 7</b><div class="panel panel-default">
+<div class="panel-heading"><a name="1"> Question # 1</a> Type: Single answer, Maximum score: 1, Score:1</div>
+<div class="panel-body" style="padding-top: 5px;"><div style="padding: 6px;">Consider the network graph consisting of source node <img src="BRUTE_files/latex_cfcd208495d565ef66e7dff9f98764da.png" width="9" height="14" class="tcecode">, destination node <img src="BRUTE_files/latex_7b8b965ad4bca0e41ab51de7b31363a1.png" width="11" height="9" class="tcecode">, and <img src="BRUTE_files/latex_7b8b965ad4bca0e41ab51de7b31363a1.png" width="11" height="9" class="tcecode"> connected "triangles" as depicted in the figure. (Such a graph consists of <img src="BRUTE_files/latex_a5cb3eb94ad6b248a6b5294892824568.png" width="56" height="16" class="tcecode"> nodes and <img src="BRUTE_files/latex_fa7674a88b1ff1139a00caf969933a8c.png" width="22" height="14" class="tcecode"> arcs.) All lower bounds are <img src="BRUTE_files/latex_cfcd208495d565ef66e7dff9f98764da.png" width="9" height="14" class="tcecode"> and upper bounds are <img src="BRUTE_files/latex_c4ca4238a0b923820dcc509a6f75849b.png" width="7" height="14" class="tcecode">. How many <strong class="tcecode">distinct minimum capacity cuts</strong> are there?<br><br><img src="BRUTE_files/202104071200_counts2.png" alt="image:752/202104071200_counts2.png" width="558" height="93" class="tcecode"></div>
+
+<div class="radio-group">
+<div class="radiobox radiobox-primary radiobox-circle"> <input type="radio" class="updateAnswer" id="answer_496384_13341" value="13341" name="answer_radio" disabled="disabled"><label for="answer_496384_13341">A<span style="margin-left:20px; font-weight: normal;"> <img src="BRUTE_files/latex_6595d679e306a127a3fe53268bcaddb2.png" width="19" height="17" class="tcecode"></span></label>
+</div>
+<div class="radiobox radiobox-primary radiobox-circle"> <input type="radio" class="updateAnswer" id="answer_496384_13339" value="13339" name="answer_radio" disabled="disabled"><label for="answer_496384_13339">B<span style="margin-left:20px; font-weight: normal;"> <img src="BRUTE_files/latex_7b8b965ad4bca0e41ab51de7b31363a1.png" width="11" height="9" class="tcecode"></span></label>
+</div>
+<div class="radiobox radiobox-primary radiobox-circle"> <input type="radio" class="updateAnswer" id="answer_496384_13343" value="13343" name="answer_radio" disabled="disabled"><label for="answer_496384_13343">C<span style="margin-left:20px; font-weight: normal;"> <img src="BRUTE_files/latex_388f554901ba5d77339eec8b26beebea.png" width="16" height="15" class="tcecode"></span></label>
+</div>
+<div class="radiobox radiobox-primary radiobox-circle"> <input type="radio" class="updateAnswer" id="answer_496384_13345" value="13345" name="answer_radio" disabled="disabled"><label for="answer_496384_13345">D<span style="margin-left:20px; font-weight: normal;"> None of the other options is correct</span></label>
+</div>
+<div class="radiobox radiobox-primary radiobox-circle"> <input type="radio" class="updateAnswer" id="answer_496384_13344" value="13344" name="answer_radio" disabled="disabled"><label for="answer_496384_13344">E<span style="margin-left:20px; font-weight: normal;"> <img src="BRUTE_files/latex_4e08c776b6e778b44ea81c63304f6966.png" width="23" height="25" class="tcecode"></span></label>
+</div>
+<div class="radiobox radiobox-primary radiobox-circle answer-blue"> <input type="radio" class="updateAnswer" id="answer_496384_13340" value="13340" name="answer_radio" checked="checked" disabled="disabled"><label for="answer_496384_13340">F<span style="margin-left:20px; font-weight: normal;"> <img src="BRUTE_files/latex_21e2c0c0472b331622877accbe29b91b.png" width="21" height="14" class="tcecode"><span style="font-weight: bold;margin-left: 20px;">Correct answer</span></span></label>
+</div>
+<div class="radiobox radiobox-primary radiobox-circle"> <input type="radio" class="updateAnswer" id="answer_496384_13338" value="13338" name="answer_radio" disabled="disabled"><label for="answer_496384_13338">G<span style="margin-left:20px; font-weight: normal;"> <img src="BRUTE_files/latex_c4ca4238a0b923820dcc509a6f75849b.png" width="7" height="14" class="tcecode"></span></label>
+</div>
+<div class="radiobox radiobox-primary radiobox-circle"> <input type="radio" class="updateAnswer" id="answer_496384_13337" value="13337" name="answer_radio" disabled="disabled"><label for="answer_496384_13337">I<span style="margin-left:20px; font-weight: normal;"> <img src="BRUTE_files/latex_cfcd208495d565ef66e7dff9f98764da.png" width="9" height="14" class="tcecode"></span></label>
+</div>
+<div class="radiobox radiobox-primary radiobox-circle"> <input type="radio" class="updateAnswer" id="answer_496384_13342" value="13342" name="answer_radio" disabled="disabled"><label for="answer_496384_13342">J<span style="margin-left:20px; font-weight: normal;"> <img src="BRUTE_files/latex_d1db0d9c696a8c056e7117dbbb4ef6db.png" width="19" height="14" class="tcecode"></span></label>
+</div>
+<div class=" radiobox radiobox-warning radiobox-circle"> <input type="radio" class="updateAnswer" id="reset" value="1" name="reset" disabled="disabled" onclick="clear_answers(9)"><label for="reset"> Clear answer </label>
+</div>
+</div>
+<input type="HIDDEN" id="generated_question_id" name="generated_question_id" value="496384">
+<input type="HIDDEN" id="question_position" name="question_position" value="1">
+<input type="HIDDEN" id="action" name="action" value="save_test_result">
+
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading"><a name="2"> Question # 2</a> Type: Single answer, Maximum score: 1, Score:1</div>
+<div class="panel-body" style="padding-top: 5px;"><div style="padding: 6px;">Let 5-tuple <img src="BRUTE_files/latex_8e6c63470b2cbbc61c50f3105d2fc1df.png" width="101" height="20" class="tcecode">, where <img src="BRUTE_files/latex_9e9992d6bf50b7580f971487c466a8cb.png" width="96" height="20" class="tcecode">, be a network and let a minimum cut be induced by <img src="BRUTE_files/latex_253c10353dea726321db89ebefe99150.png" width="58" height="16" class="tcecode">. Which of the following claims are true and which are false?<br><br>(i) If we multiply each lower/upper bound by a positive number <img src="BRUTE_files/latex_c6a6eb61fd9c6c913da73b3642ca147d.png" width="10" height="14" class="tcecode">, the minimum cut induced by <img src="BRUTE_files/latex_7fc56270e7a70fa81a5935b72eacbe29.png" width="14" height="15" class="tcecode"> is still a minimum cut.<br>(ii) If we add a positive number <img src="BRUTE_files/latex_c6a6eb61fd9c6c913da73b3642ca147d.png" width="10" height="14" class="tcecode"> to each lower/upper bound, the minimum cut induced by <img src="BRUTE_files/latex_7fc56270e7a70fa81a5935b72eacbe29.png" width="14" height="15" class="tcecode"> is still a minimum cut.</div>
+<form role="form" id="online_test_form" class="form-horizontal form" name="online_test_form">
+<div class="radio-group">
+<div class="radiobox radiobox-primary radiobox-circle"> <input type="radio" class="updateAnswer" id="answer_496386_13403" value="13403" name="answer_radio" disabled="disabled"><label for="answer_496386_13403">A<span style="margin-left:20px; font-weight: normal;"> (i) false (ii) true</span></label>
+</div>
+<div class="radiobox radiobox-primary radiobox-circle answer-blue"> <input type="radio" class="updateAnswer" id="answer_496386_13402" value="13402" name="answer_radio" checked="checked" disabled="disabled"><label for="answer_496386_13402">B<span style="margin-left:20px; font-weight: normal;"> (i) true (ii) false<span style="font-weight: bold;margin-left: 20px;">Correct answer</span></span></label>
+</div>
+<div class="radiobox radiobox-primary radiobox-circle"> <input type="radio" class="updateAnswer" id="answer_496386_13401" value="13401" name="answer_radio" disabled="disabled"><label for="answer_496386_13401">C<span style="margin-left:20px; font-weight: normal;"> (i) true (ii) true</span></label>
+</div>
+<div class="radiobox radiobox-primary radiobox-circle"> <input type="radio" class="updateAnswer" id="answer_496386_13404" value="13404" name="answer_radio" disabled="disabled"><label for="answer_496386_13404">D<span style="margin-left:20px; font-weight: normal;"> (i) false (ii) false</span></label>
+</div>
+<div class=" radiobox radiobox-warning radiobox-circle"> <input type="radio" class="updateAnswer" id="reset" value="1" name="reset" disabled="disabled" onclick="clear_answers(4)"><label for="reset"> Clear answer </label>
+</div>
+</div>
+<input type="HIDDEN" id="generated_question_id" name="generated_question_id" value="496386">
+<input type="HIDDEN" id="question_position" name="question_position" value="2">
+<input type="HIDDEN" id="action" name="action" value="save_test_result">
+</form>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading"><a name="3"> Question # 3</a> Type: Single answer, Maximum score: 1, Score:1</div>
+<div class="panel-body" style="padding-top: 5px;"><div style="padding: 6px;">Consider a network <img src="BRUTE_files/latex_4920de2cf1901e42e6cb3675a2b4d617.png" width="101" height="20" class="tcecode"> with maximum flow <img src="BRUTE_files/latex_8fa14cdd754f91cc6554c9e71929cce7.png" width="10" height="18" class="tcecode">. We define a <em class="tcecode">most vital arc</em>
+ of a network as an arc whose deletion causes the largest decrease in 
+the maximum flow value. Which of the following claims is true?</div>
+<form role="form" id="online_test_form" class="form-horizontal form" name="online_test_form">
+<div class="radio-group">
+<div class="radiobox radiobox-primary radiobox-circle answer-blue"> <input type="radio" class="updateAnswer" id="answer_496387_13409" value="13409" name="answer_radio" checked="checked" disabled="disabled"><label for="answer_496387_13409">A<span style="margin-left:20px; font-weight: normal;"> A network might contain several most vital arcs.<span style="font-weight: bold;margin-left: 20px;">Correct answer</span></span></label>
+</div>
+<div class="radiobox radiobox-primary radiobox-circle"> <input type="radio" class="updateAnswer" id="answer_496387_13407" value="13407" name="answer_radio" disabled="disabled"><label for="answer_496387_13407">B<span style="margin-left:20px; font-weight: normal;"> A most vital arc is an arc with the maximum value of <img src="BRUTE_files/latex_b2a4a0f9166881f2eb72bbbc8db92995.png" width="51" height="20" class="tcecode"> among arcs belonging to some minimum cut.</span></label>
+</div>
+<div class="radiobox radiobox-primary radiobox-circle"> <input type="radio" class="updateAnswer" id="answer_496387_13405" value="13405" name="answer_radio" disabled="disabled"><label for="answer_496387_13405">C<span style="margin-left:20px; font-weight: normal;"> A most vital arc is an arc with the maximum value of <img src="BRUTE_files/latex_216133a5837497a9396013022c52702d.png" width="51" height="20" class="tcecode">.</span></label>
+</div>
+<div class="radiobox radiobox-primary radiobox-circle"> <input type="radio" class="updateAnswer" id="answer_496387_13408" value="13408" name="answer_radio" disabled="disabled"><label for="answer_496387_13408">D<span style="margin-left:20px; font-weight: normal;"> An arc that does not belong to some minimum cut cannot be a most vital arc.</span></label>
+</div>
+<div class="radiobox radiobox-primary radiobox-circle"> <input type="radio" class="updateAnswer" id="answer_496387_13406" value="13406" name="answer_radio" disabled="disabled"><label for="answer_496387_13406">E<span style="margin-left:20px; font-weight: normal;"> A most vital arc is an arc with the maximum value of <img src="BRUTE_files/latex_b2a4a0f9166881f2eb72bbbc8db92995.png" width="51" height="20" class="tcecode">.</span></label>
+</div>
+<div class=" radiobox radiobox-warning radiobox-circle"> <input type="radio" class="updateAnswer" id="reset" value="1" name="reset" disabled="disabled" onclick="clear_answers(5)"><label for="reset"> Clear answer </label>
+</div>
+</div>
+<input type="HIDDEN" id="generated_question_id" name="generated_question_id" value="496387">
+<input type="HIDDEN" id="question_position" name="question_position" value="3">
+<input type="HIDDEN" id="action" name="action" value="save_test_result">
+</form>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading"><a name="4"> Question # 4</a> Type: Single answer, Maximum score: 1, Score:1</div>
+<div class="panel-body" style="padding-top: 5px;"><div style="padding: 6px;">Which of the following claims are true and which are false? Consider maximum flow network <img src="BRUTE_files/latex_7b0be2be1e59607d698e4ce53d0034d9.png" width="101" height="20" class="tcecode"> with zero lower bounds.<br><br>(i) If <img src="BRUTE_files/latex_8fa14cdd754f91cc6554c9e71929cce7.png" width="10" height="18" class="tcecode"> is a maximum flow, then for every pair of arcs <img src="BRUTE_files/latex_5270ae675fac24f97e172dcd9b18fa92.png" width="38" height="20" class="tcecode"> and <img src="BRUTE_files/latex_228187fcef7133d7abd9b918cca67b79.png" width="36" height="20" class="tcecode">, either <img src="BRUTE_files/latex_5d97b7c176a384cf0ca040805321d393.png" width="91" height="20" class="tcecode"> or <img src="BRUTE_files/latex_a0dab6e55e695232bb3b3dcb10b5b696.png" width="90" height="20" class="tcecode">.<br>(ii) Any such network always has a maximum flow <img src="BRUTE_files/latex_8fa14cdd754f91cc6554c9e71929cce7.png" width="10" height="18" class="tcecode"> for which, for every pair of arcs <img src="BRUTE_files/latex_5270ae675fac24f97e172dcd9b18fa92.png" width="38" height="20" class="tcecode"> and <img src="BRUTE_files/latex_228187fcef7133d7abd9b918cca67b79.png" width="36" height="20" class="tcecode">, either <img src="BRUTE_files/latex_5d97b7c176a384cf0ca040805321d393.png" width="91" height="20" class="tcecode"> or <img src="BRUTE_files/latex_a0dab6e55e695232bb3b3dcb10b5b696.png" width="90" height="20" class="tcecode">, or both are equal to 0.</div>
+<form role="form" id="online_test_form" class="form-horizontal form" name="online_test_form">
+<div class="radio-group">
+<div class="radiobox radiobox-primary radiobox-circle answer-blue"> <input type="radio" class="updateAnswer" id="answer_496388_13395" value="13395" name="answer_radio" checked="checked" disabled="disabled"><label for="answer_496388_13395">A<span style="margin-left:20px; font-weight: normal;"> (i) false (ii) true<span style="font-weight: bold;margin-left: 20px;">Correct answer</span></span></label>
+</div>
+<div class="radiobox radiobox-primary radiobox-circle"> <input type="radio" class="updateAnswer" id="answer_496388_13396" value="13396" name="answer_radio" disabled="disabled"><label for="answer_496388_13396">B<span style="margin-left:20px; font-weight: normal;"> (i) false (ii) false</span></label>
+</div>
+<div class="radiobox radiobox-primary radiobox-circle"> <input type="radio" class="updateAnswer" id="answer_496388_13394" value="13394" name="answer_radio" disabled="disabled"><label for="answer_496388_13394">C<span style="margin-left:20px; font-weight: normal;"> (i) true (ii) false</span></label>
+</div>
+<div class="radiobox radiobox-primary radiobox-circle"> <input type="radio" class="updateAnswer" id="answer_496388_13393" value="13393" name="answer_radio" disabled="disabled"><label for="answer_496388_13393">D<span style="margin-left:20px; font-weight: normal;"> (i) true (ii) true</span></label>
+</div>
+<div class=" radiobox radiobox-warning radiobox-circle"> <input type="radio" class="updateAnswer" id="reset" value="1" name="reset" disabled="disabled" onclick="clear_answers(4)"><label for="reset"> Clear answer </label>
+</div>
+</div>
+<input type="HIDDEN" id="generated_question_id" name="generated_question_id" value="496388">
+<input type="HIDDEN" id="question_position" name="question_position" value="4">
+<input type="HIDDEN" id="action" name="action" value="save_test_result">
+</form>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading"><a name="5"> Question # 5</a> Type: Single answer, Maximum score: 1, Score:1</div>
+<div class="panel-body" style="padding-top: 5px;"><div style="padding: 6px;">Given a directed acyclic graph (DAG), i.e., there exists a topological ordering. The graph consists of <img src="BRUTE_files/latex_7b8b965ad4bca0e41ab51de7b31363a1.png" width="11" height="9" class="tcecode"> nodes and <img src="BRUTE_files/latex_6f8f57715090da2632453988d9a1501b.png" width="17" height="9" class="tcecode"> edges. What will be the time complexity for the single-source shortest path tree algorithm?</div>
+<form role="form" id="online_test_form" class="form-horizontal form" name="online_test_form">
+<div class="radio-group">
+<div class="radiobox radiobox-primary radiobox-circle"> <input type="radio" class="updateAnswer" id="answer_496389_13496" value="13496" name="answer_radio" disabled="disabled"><label for="answer_496389_13496">A<span style="margin-left:20px; font-weight: normal;"> <img src="BRUTE_files/latex_a6e200f05467fb069772a59842a9f43d.png" width="42" height="20" class="tcecode"></span></label>
+</div>
+<div class="radiobox radiobox-primary radiobox-circle"> <input type="radio" class="updateAnswer" id="answer_496389_13499" value="13499" name="answer_radio" disabled="disabled"><label for="answer_496389_13499">B<span style="margin-left:20px; font-weight: normal;"> <img src="BRUTE_files/latex_c96d9b2467931157b5e4d0051a57e94d.png" width="88" height="20" class="tcecode"></span></label>
+</div>
+<div class="radiobox radiobox-primary radiobox-circle"> <input type="radio" class="updateAnswer" id="answer_496389_13498" value="13498" name="answer_radio" disabled="disabled"><label for="answer_496389_13498">C<span style="margin-left:20px; font-weight: normal;"> <img src="BRUTE_files/latex_2ed7fc5fa4944df9e17734b7becb162d.png" width="103" height="21" class="tcecode"></span></label>
+</div>
+<div class="radiobox radiobox-primary radiobox-circle"> <input type="radio" class="updateAnswer" id="answer_496389_13502" value="13502" name="answer_radio" disabled="disabled"><label for="answer_496389_13502">D<span style="margin-left:20px; font-weight: normal;"> None of the other options is correct</span></label>
+</div>
+<div class="radiobox radiobox-primary radiobox-circle"> <input type="radio" class="updateAnswer" id="answer_496389_13500" value="13500" name="answer_radio" disabled="disabled"><label for="answer_496389_13500">E<span style="margin-left:20px; font-weight: normal;"> <img src="BRUTE_files/latex_e556e9a4353c47b43d5b2125f5a0dad0.png" width="116" height="20" class="tcecode"></span></label>
+</div>
+<div class="radiobox radiobox-primary radiobox-circle"> <input type="radio" class="updateAnswer" id="answer_496389_13501" value="13501" name="answer_radio" disabled="disabled"><label for="answer_496389_13501">F<span style="margin-left:20px; font-weight: normal;"> <img src="BRUTE_files/latex_be42ac76e39e674b32e0ffe42c043651.png" width="132" height="20" class="tcecode"></span></label>
+</div>
+<div class="radiobox radiobox-primary radiobox-circle answer-blue"> <input type="radio" class="updateAnswer" id="answer_496389_13497" value="13497" name="answer_radio" checked="checked" disabled="disabled"><label for="answer_496389_13497">G<span style="margin-left:20px; font-weight: normal;"> <img src="BRUTE_files/latex_03ef8d0d8e77cf77afa6c408d6837116.png" width="86" height="20" class="tcecode"><span style="font-weight: bold;margin-left: 20px;">Correct answer</span></span></label>
+</div>
+<div class=" radiobox radiobox-warning radiobox-circle"> <input type="radio" class="updateAnswer" id="reset" value="1" name="reset" disabled="disabled" onclick="clear_answers(7)"><label for="reset"> Clear answer </label>
+</div>
+</div>
+<input type="HIDDEN" id="generated_question_id" name="generated_question_id" value="496389">
+<input type="HIDDEN" id="question_position" name="question_position" value="5">
+<input type="HIDDEN" id="action" name="action" value="save_test_result">
+</form>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading"><a name="6"> Question # 6</a> Type: Single answer, Maximum score: 1, Score:1</div>
+<div class="panel-body" style="padding-top: 5px;"><div style="padding: 6px;">Let <img src="BRUTE_files/latex_b9ece18c950afbfa6b0fdbfa4ff731d3.png" width="15" height="14" class="tcecode">
+ be a shortest-paths tree constructed by Dijkstra's algorithm solving 
+the single source shortest-paths problem for a weighted connected 
+undirected graph <img src="BRUTE_files/latex_dfcf28d0734569a6a693bc8194de62bf.png" width="15" height="14" class="tcecode"> where all edge weights are nonnegative. Are the following statements true or false?<br><br>(i) <img src="BRUTE_files/latex_b9ece18c950afbfa6b0fdbfa4ff731d3.png" width="15" height="14" class="tcecode"> is a spanning tree of <img src="BRUTE_files/latex_dfcf28d0734569a6a693bc8194de62bf.png" width="15" height="14" class="tcecode">.<br>(ii) <img src="BRUTE_files/latex_b9ece18c950afbfa6b0fdbfa4ff731d3.png" width="15" height="14" class="tcecode"> is a minimum spanning tree (MST) of <img src="BRUTE_files/latex_dfcf28d0734569a6a693bc8194de62bf.png" width="15" height="14" class="tcecode">.</div>
+<form role="form" id="online_test_form" class="form-horizontal form" name="online_test_form">
+<div class="radio-group">
+<div class="radiobox radiobox-primary radiobox-circle"> <input type="radio" class="updateAnswer" id="answer_496383_13457" value="13457" name="answer_radio" disabled="disabled"><label for="answer_496383_13457">A<span style="margin-left:20px; font-weight: normal;"> (i) true (ii) true</span></label>
+</div>
+<div class="radiobox radiobox-primary radiobox-circle"> <input type="radio" class="updateAnswer" id="answer_496383_13459" value="13459" name="answer_radio" disabled="disabled"><label for="answer_496383_13459">B<span style="margin-left:20px; font-weight: normal;"> (i) false (ii) true</span></label>
+</div>
+<div class="radiobox radiobox-primary radiobox-circle answer-blue"> <input type="radio" class="updateAnswer" id="answer_496383_13458" value="13458" name="answer_radio" checked="checked" disabled="disabled"><label for="answer_496383_13458">C<span style="margin-left:20px; font-weight: normal;"> (i) true (ii) false<span style="font-weight: bold;margin-left: 20px;">Correct answer</span></span></label>
+</div>
+<div class="radiobox radiobox-primary radiobox-circle"> <input type="radio" class="updateAnswer" id="answer_496383_13460" value="13460" name="answer_radio" disabled="disabled"><label for="answer_496383_13460">D<span style="margin-left:20px; font-weight: normal;"> (i) false (ii) false</span></label>
+</div>
+<div class=" radiobox radiobox-warning radiobox-circle"> <input type="radio" class="updateAnswer" id="reset" value="1" name="reset" disabled="disabled" onclick="clear_answers(4)"><label for="reset"> Clear answer </label>
+</div>
+</div>
+<input type="HIDDEN" id="generated_question_id" name="generated_question_id" value="496383">
+<input type="HIDDEN" id="question_position" name="question_position" value="6">
+<input type="HIDDEN" id="action" name="action" value="save_test_result">
+</form>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading"><a name="7"> Question # 7</a> Type: Single answer, Maximum score: 1, Score:1</div>
+<div class="panel-body" style="padding-top: 5px;"><div style="padding: 6px;">An
+ airline charges a fixed price for each individual flight. For each 
+sequence of hopping flights, the ticket price is the sum of the fares of
+ the individual flights. TripGuru has precalculated the cheapest routes 
+between all pairs of cities so that it can offer an optimum choice 
+instantly to customers visiting its website. Overnight, a 13% luxury 
+service surcharge has been added to the cost of each individual flight. 
+Which of the following describes the impact of this surcharge on 
+TripGuru's computation?</div>
+<form role="form" id="online_test_form" class="form-horizontal form" name="online_test_form">
+<div class="radio-group">
+<div class="radiobox radiobox-primary radiobox-circle answer-blue"> <input type="radio" class="updateAnswer" id="answer_496385_13443" value="13443" name="answer_radio" checked="checked" disabled="disabled"><label for="answer_496385_13443">A<span style="margin-left:20px; font-weight: normal;"> There is no impact. The cheapest routes between all pairs of cities remain unchanged.<span style="font-weight: bold;margin-left: 20px;">Correct answer</span></span></label>
+</div>
+<div class="radiobox radiobox-primary radiobox-circle"> <input type="radio" class="updateAnswer" id="answer_496385_13446" value="13446" name="answer_radio" disabled="disabled"><label for="answer_496385_13446">B<span style="margin-left:20px; font-weight: normal;"> The impact is unpredictable. TripGuru should recompute all routes.</span></label>
+</div>
+<div class="radiobox radiobox-primary radiobox-circle"> <input type="radio" class="updateAnswer" id="answer_496385_13445" value="13445" name="answer_radio" disabled="disabled"><label for="answer_496385_13445">C<span style="margin-left:20px; font-weight: normal;">
+ The surcharge favors hopping flights with more individual flights. 
+TripGuru should recompute any cheapest route where there is a longer 
+route in terms of the number of flights.</span></label>
+</div>
+<div class="radiobox radiobox-primary radiobox-circle"> <input type="radio" class="updateAnswer" id="answer_496385_13444" value="13444" name="answer_radio" disabled="disabled"><label for="answer_496385_13444">D<span style="margin-left:20px; font-weight: normal;">
+ The surcharge favors hopping flights with fewer individual flights. 
+TripGuru should recompute any cheapest route where there is a shorter 
+route in terms of the number of flights.</span></label>
+</div>
+<div class=" radiobox radiobox-warning radiobox-circle"> <input type="radio" class="updateAnswer" id="reset" value="1" name="reset" disabled="disabled" onclick="clear_answers(4)"><label for="reset"> Clear answer </label>
+</div>
+</div>
+<input type="HIDDEN" id="generated_question_id" name="generated_question_id" value="496385">
+<input type="HIDDEN" id="question_position" name="question_position" value="7">
+<input type="HIDDEN" id="action" name="action" value="save_test_result">
+</form>
+</div>
+</div>
+
+</div></div></form>
+<input type="HIDDEN" id="id" name="id" value="1192">
+<input type="HIDDEN" id="assignment_id" name="assignment_id" value="7042">
+
+</div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+                <div class="col-xs-3 hidden-xs hidden-sm">
+    <div class="panel panel-warning">
+       <div class="panel-heading">Upcoming deadlines</div>
+       <div class="panel-body">
+<a href="https://cw.felk.cvut.cz/brute/student/course/A0M33EOA/DU1" class="list-group-item"><span class="hidden-md"><span>A0M33EOA - DU1</span><span class="badge" style="float: right;" title="Hours to deadline">31 hours</span></span><span class="visible-md"><span>EOA-DU1</span><span class="badge" style="float: right;" title="Hours to deadline">31h</span></span></a>
+<a href="https://cw.felk.cvut.cz/brute/student/course/CGT/efg" class="list-group-item"><span class="hidden-md"><span>CGT - efg</span><span class="badge" style="float: right;" title="Hours to deadline">9 days</span></span><span class="visible-md"><span>CGT-efg</span><span class="badge" style="float: right;" title="Hours to deadline">9d</span></span></a>
+<a href="https://cw.felk.cvut.cz/brute/student/course/A0M33EOA/DU2" class="list-group-item"><span class="hidden-md"><span>A0M33EOA - DU2</span><span class="badge" style="float: right;" title="Hours to deadline">29 days</span></span><span class="visible-md"><span>EOA-DU2</span><span class="badge" style="float: right;" title="Hours to deadline">29d</span></span></a>
+<a href="https://cw.felk.cvut.cz/brute/student/course/A0M33EOA/Sem-Prez" class="list-group-item"><span class="hidden-md"><span>A0M33EOA - Sem-Prez</span><span class="badge" style="float: right;" title="Hours to deadline">65 days</span></span><span class="visible-md"><span>EOA-Sem-Prez</span><span class="badge" style="float: right;" title="Hours to deadline">65d</span></span></a>
+<a href="https://cw.felk.cvut.cz/brute/student/course/A0M33EOA/Sem-Rep" class="list-group-item"><span class="hidden-md"><span>A0M33EOA - Sem-Rep</span><span class="badge" style="float: right;" title="Hours to deadline">65 days</span></span><span class="visible-md"><span>EOA-Sem-Rep</span><span class="badge" style="float: right;" title="Hours to deadline">65d</span></span></a>
+<a href="https://cw.felk.cvut.cz/brute/student/course/CGT/sqf" class="list-group-item"><span class="hidden-md"><span>CGT - sqf</span><span class="badge" style="float: right;" title="Hours to deadline">389 days</span></span><span class="visible-md"><span>CGT-sqf</span><span class="badge" style="float: right;" title="Hours to deadline">389d</span></span></a>
+
+</div>
+</div>
+</div>
+            </div>
+            <div style="margin-top: 20px;margin-left: 10px;align-content: center;float: none;width: max-content">
+    <div class="panel panel-info">
+       <div class="panel-heading">Course summary</div>
+       <div class="panel-body">
+<table class="table table-small table-compact table-responsive" style="margin-bottom: 0px; font-size: small;">
+<thead><tr style="text-align: center"><td><span style="font-weight: bold">HW1</span><br>&lt;2,2&gt;<br>w:1</td>
+<td><span style="font-weight: bold">HW2</span><br>&lt;2,2&gt;<br>w:1</td>
+<td><span style="font-weight: bold">HW3</span><br>&lt;2,2&gt;<br>w:1</td>
+<td><span style="font-weight: bold">HW4</span><br>&lt;2,2&gt;<br>w:1</td>
+<td><span style="font-weight: bold">HW5</span><br>&lt;2,2&gt;<br>w:1</td>
+<td><span style="font-weight: bold">PR_TEST</span><br>&lt;0,10&gt;<br>w:1</td>
+<td><span style="font-weight: bold">SP-CC-O</span><br>&lt;0,3&gt;<br>w:1</td>
+<td><span style="font-weight: bold">SP-CC-R</span><br>&lt;0,5&gt;<br>w:1</td>
+<td><span style="font-weight: bold">SP-CC-T</span><br>&lt;0,8&gt;<br>w:1</td>
+<td><span style="font-weight: bold">SP-RP</span><br>&lt;0,16&gt;<br>w:1</td>
+<td><span style="font-weight: bold">TH_TEST1</span><br>&lt;0,7&gt;<br>w:1</td>
+<td><span style="font-weight: bold">TH_TEST2</span><br>&lt;-3.5,7&gt;<br>w:1</td>
+<th>Sum assign.</th><th>Sum tests</th><th>Sum</th></tr></thead>
+<tbody><tr style="text-align: center"><td>2</td>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+<td>10</td>
+<td>3</td>
+<td>5</td>
+<td>8</td>
+<td>XX</td>
+<td>0</td>
+<td>7</td>
+<td>26</td><td>17</td><th>43</th></tr></tbody></table>
+</div>
+<div class="panel-footer">&lt; minimum , maximum &gt; ; w = weight ; !! = not accepted yet</div>
+</div></div>
+
+        </div>
+        
+        <script>
+            path = window.location.pathname.replace(/^\/(\w+)\/(.+)$/, '/$1/student/');
+            $("#assignment_tabs").tabCollapse();
+            var delay = (function () {
+                var timer = 0;
+                return function (callback, ms) {
+                    clearTimeout(timer);
+                    timer = setTimeout(callback, ms);
+                };
+            })();
+                        function variantCheck(assignment_id) {
+                if ($("#available_variants_" + assignment_id).val() > 0) {
+                    $("#create_team_" + assignment_id).prop('disabled', false);
+                } else {
+                    $("#create_team_" + assignment_id).prop('disabled', true);
+                }
+            }
+            function allow_reupload(assignment_id) {
+                var rewrite_button=$("#rewrite_"+assignment_id);
+                var upload_form=$("#upload_form_"+assignment_id);
+                rewrite_button.hide();
+                upload_form.show();
+            }
+
+            function create_team(assignment_id) {
+                var free_students = $("#free_students_"+assignment_id).val();
+                var variants=$("#available_variants_"+assignment_id).val();
+                $.ajax({
+                    type: "post",
+                    url: path + "ajax_service.php",
+                    data: {action: 'create_team', assignment_id:assignment_id,free_students:free_students,variants:variants },
+                    success: function (result) { //so, if data is retrieved, store it in html
+                        var json = $.parseJSON(result);
+                        if (json.team_id) {
+                            location.reload();
+                        } else {
+                            if (json.error){
+                                var error_alert="#create_error_"+assignment_id;
+                                $(error_alert).show();
+                                $(error_alert).html(json.error);
+                            }
+                        }
+                    }
+                });
+            }
+
+
+            $(document).ready(function () {
+                $('.nav-tabs a').on('shown.bs.tab', function (event) {
+                    var active_tab = $(event.target).data('id');         // active tab
+                    var course_id = $(this).data('course_id');
+                    $.ajax({
+                        type: "post",
+                        url: path + "ajax_service.php",
+                        data: {action: 'save_active_tab', course_id: course_id, active_tab: active_tab},
+                        success: function (result) { //so, if data is retrieved, store it in html
+                        }
+                    });
+                });
+
+            });
+        </script>
+            <footer class="hidden-xs footer">
+        <div class="container container-large">
+            <div class="row text-center">
+                <ul class="list-inline">
+                    <li>© 2020 |</li>
+                    <li class="visible-xs-inline">BRUTE</li>
+                    <li class="hidden-sm">BRUTE - Bundle for Reservation, Uploading, Testing and Evaluation |</li>
+                    <li class="visible-sm-inline">BRUTE |</li>
+                    <li class="hidden-xs"><a class="footera" href="http://cyber.felk.cvut.cz/">Katedra kybernetiky</a> |</li>
+                    <li class="hidden-xs"><a class="footera" href="http://www.fel.cvut.cz/">Fakulta elektrotechnická</a> |</li>
+                    <li class="hidden-xs"><a class="footera" href="http://www.cvut.cz/">ČVUT</a></li>
+                    <li class="hidden-xs"></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <footer class="visible-xs-display hidden-sm hidden-md hidden-lg footer" style="position:relative">
+        <div class="container">
+            <div class="row text-center">
+                <ul class="list-inline">
+                    <li>© 2015 |</li>
+                    <li> BRUTE |</li>
+                    <li><a class="footera" href="http://www.fel.cvut.cz/">FEL</a> |</li>
+                    <li><a class="footera" href="http://www.cvut.cz/">ČVUT</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    </body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>
